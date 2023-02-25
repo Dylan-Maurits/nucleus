@@ -1,6 +1,6 @@
 const mysql = require("promise-mysql")
 
-const db = async () => {
+const connection = async () => {
     return mysql.createPool({
         user: process.env.DB_USER,
         password: process.env.DB_PASS,
@@ -9,4 +9,4 @@ const db = async () => {
     });
 };
 
-module.exports = pool
+module.exports = connection
