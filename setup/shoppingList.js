@@ -9,8 +9,8 @@ async function setupDatabase(req, res) {
         await pool.query(`CREATE TABLE IF NOT EXISTS shopping_list
                           (
                               id     MEDIUMINT    NOT NULL AUTO_INCREMENT,
-                              user MEDIUMINT,
-                              name VARCHAR(255),
+                              user MEDIUMINT NOT NULL,
+                              name VARCHAR(255) NOT NULL,
                               PRIMARY KEY (id)
                           )`)
         await pool.query(`CREATE TABLE IF NOT EXISTS shopping_items
