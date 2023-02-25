@@ -13,14 +13,15 @@ async function setupDatabase(req, res) {
                               name VARCHAR(255) NOT NULL,
                               PRIMARY KEY (id)
                           )`)
-        await pool.query(`CREATE TABLE IF NOT EXISTS shopping_items
+        await pool.query(`CREATE TABLE IF NOT EXISTS list_items
                           (
                               id     MEDIUMINT    NOT NULL AUTO_INCREMENT,
+                              list_id MEDIUMINT,
                               name MEDIUMINT,
                               quantity VARCHAR(255),
                               unit INT,
                               PRIMARY KEY (id),
-                              FOREIGN KEY (id) REFERENCES shopping_list(id)
+                              FOREIGN KEY (list_id) REFERENCES shopping_list(id)
                           )`)
     } catch (e) {
         message = e.message

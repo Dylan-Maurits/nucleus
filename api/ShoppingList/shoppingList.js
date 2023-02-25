@@ -18,4 +18,24 @@ async function postShoppingList(req, res) {
     res.status(status).send({message});
 }
 
-module.exports = postShoppingList
+async function addItems(req, res) {
+    const pool = await db()
+    let message = 'Added items to shopping list'
+    let status = 200
+    const items  = req.body.list.items
+    for (let item in items) {
+        console.log(item)
+    }
+    res.send('ok')
+
+    // try {
+    //     for (let item in items) {
+    //         await pool.query(`INSERT INTO list_items` ())
+    //     }
+    // } catch (e) {
+    //
+    // }
+
+}
+
+module.exports = { postShoppingList, addItems }
