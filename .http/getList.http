@@ -1,0 +1,6 @@
+POST {{host}}/addItem
+Content-Type: application/json
+
+{
+    "list_id": "1"
+}

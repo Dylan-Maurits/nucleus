@@ -35,4 +35,8 @@ async function addItem(req, res) {
     res.status(status).send(message)
 }
 
+async function getList(req, res) {
+    res.send('getList oke')
+}
+
 module.exports = {postShoppingList, addItem}
