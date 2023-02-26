@@ -1,6 +1,6 @@
 ##  (2023-02-25)
 
-[View Release](git@github.com:Dylan-Maurits/lister.git/commits/tag/)
+[View Release](git@github.com:Dylan-Maurits/nucleus.git/commits/tag/)
 
 *  initial commit *(Dylan Maurits)*
 *  created index.js *(Dylan Maurits)*
