@@ -1,0 +1,9 @@
+POST {{host}}/addItem
+Content-Type: application/json
+
+{
+    "name": "cola",
+    "quantity": "3",
+    "unit": "4",
+    "list_id": "1"
+}
