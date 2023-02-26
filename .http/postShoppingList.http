@@ -2,20 +2,6 @@ POST {{host}}/postShoppingList
 Content-Type: application/json
 
 {
-        "list": {
-            "name": "25 februari",
-            "user": "1",
-            "items": {
-                "0": {
-                    "name": "rijst",
-                    "quantity": "3",
-                    "unit": 2
-                },
-                "1": {
-                    "name": "cola",
-                    "quantity": "1",
-                    "unit": 4
-                }
-            }
-        }
-    }
+    "name": "25 februari",
+    "user": "1"
+}

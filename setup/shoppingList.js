@@ -17,7 +17,7 @@ async function setupDatabase(req, res) {
                           (
                               id     MEDIUMINT    NOT NULL AUTO_INCREMENT,
                               list_id MEDIUMINT,
-                              name MEDIUMINT,
+                              name VARCHAR(255),
                               quantity VARCHAR(255),
                               unit INT,
                               PRIMARY KEY (id),

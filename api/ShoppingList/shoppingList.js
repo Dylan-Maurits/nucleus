@@ -1,16 +1,15 @@
 const db = require("../../app/db.js")
 
 async function postShoppingList(req, res) {
-
-    console.log(req.body.list.items)
     const pool = await db()
     let message = 'You posted a shopping list!'
     let status = 200
-    const user = req.body.list.user
-    const name = req.body.list.name
+    const user = req.body.user
+    const name = req.body.name
 
     try {
-        await pool.query(`INSERT INTO shopping_list (user, name) VALUES (?, ?)`, [user, name])
+        await pool.query(`INSERT INTO shopping_list (user, name)
+                          VALUES (?, ?)`, [user, name])
     } catch (e) {
         message = e.message
     }
@@ -18,24 +17,22 @@ async function postShoppingList(req, res) {
     res.status(status).send({message});
 }
 
-async function addItems(req, res) {
+async function addItem(req, res) {
     const pool = await db()
     let message = 'Added items to shopping list'
     let status = 200
-    const items  = req.body.list.items
-    for (let item in items) {
-        console.log(item)
+    const name = req.body.name
+    const quantiy = req.body.quantity
+    const unit = req.body.unit
+    const listId = req.body.list_id
+
+    try {
+        await pool.query(`INSERT INTO list_items (name, quantity, unit, list_id) VALUES (?, ?, ?, ?)`, [name, quantiy, unit, listId])
+    } catch (e) {
+        message = e.message
+        status = 500
     }
-    res.send('ok')
-
-    // try {
-    //     for (let item in items) {
-    //         await pool.query(`INSERT INTO list_items` ())
-    //     }
-    // } catch (e) {
-    //
-    // }
-
+    res.status(status).send(message)
 }
 
-module.exports = { postShoppingList, addItems }
+module.exports = {postShoppingList, addItem}
