@@ -36,7 +36,18 @@ async function addItem(req, res) {
 }
 
 async function getList(req, res) {
-    res.send('getList oke')
+    const pool = await db()
+    let status = 200
+    const listId = req.body.list_id
+
+    try {
+        const result = pool.query()
+    } catch (e) {
+        result = 'Failed to retrieve shopping list'
+        status = 500
+    }
+
+    res.status(status).send(result)
 }
 
-module.exports = {postShoppingList, addItem}
+module.exports = {postShoppingList, addItem, getList}

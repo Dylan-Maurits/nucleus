@@ -1,4 +1,4 @@
-POST {{host}}/addItem
+POST {{host}}/getList
 Content-Type: application/json
 
 {
